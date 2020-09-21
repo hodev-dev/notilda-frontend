@@ -18800,8 +18800,23 @@ video {
   animation: bounce 1s infinite;
 }
 
-.test{
-  color: "red"
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue orange;
+}
+
+/* Works on Chrome/Edge/Safari */
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color:thistle;
 }
 
 @media (min-width: 640px) {

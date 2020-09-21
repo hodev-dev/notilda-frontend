@@ -10,6 +10,10 @@ import {
   Link
 } from "react-router-dom";
 
+
+// import pages
+import Home from './pages/Home';
+
 let store = createStore(reducers);
 
 const App = () => {
@@ -18,12 +22,7 @@ const App = () => {
       <div className="App">
         <Router>
           <Switch >
-            <Route exact path="/about">
-              <div className="w-64 h-64 bg-red-500">about</div>
-            </Route>
-            <Route path="/">
-              <div className="w-64 h-64 bg-red-800">home</div>
-            </Route>
+            <Route path="/" component={Home} />
           </Switch>
         </Router>
       </div>
