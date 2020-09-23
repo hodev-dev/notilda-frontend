@@ -21,7 +21,11 @@ module.exports = {
 
       black: '#000',
       white: '#fff',
-
+      dark: {
+        "side": '#242426',
+        2: '#343434',
+        "main": "#1A1B1C"
+      },
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
