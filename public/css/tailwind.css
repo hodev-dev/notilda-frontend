@@ -19144,7 +19144,6 @@ video {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: blue orange;
 }
 
 /* Works on Chrome/Edge/Safari */
@@ -19154,11 +19153,11 @@ video {
 }
 
 *::-webkit-scrollbar-track {
-  background: transparent;
+  background: #1A1B1C;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color:thistle;
+  background-color: #343434 !important;
 }
 
 @media (min-width: 640px) {

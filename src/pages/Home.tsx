@@ -1,31 +1,42 @@
-import React from 'react'
-import { FiFileText, FiFolder, FiSearch } from 'react-icons/fi';
+import React, { useState } from 'react'
+import { FiFilePlus, FiFolderPlus, FiLock, FiMove } from 'react-icons/fi';
+import ListView from '../components/ListView';
 import Nav from "../components/Nav";
+import Panel from "../components/Panel";
+import IconButton from "../components/IconButton";
 
 const Home = () => {
+  const [isDragable, setIsDragable] = useState(false);
+
+  const toggleDrag = () => {
+    setIsDragable(!isDragable);
+  }
+
   return (
     <div className={"flex flex-auto max-h-screen"}>
       <div className={"w-2/12 min-h-screen overflow-y-scroll bg-dark-side"}>
         <Nav />
       </div>
       <div className={"w-8/12 min-h-screen overflow-y-scroll bg-dark-main"}>
-        <div className={"sticky top-0 flex items-center w-full h-32 bg-dark-2"}>
-          <h1 className={"p-2 ml-12 text-6xl leading-none text-yellow-200"}>Notes</h1>
+        <div className={"sticky top-0 flex flex-col w-full h-auto bg-dark-2"}>
+          <h1 className={"p-4 text-6xl leading-none text-yellow-200"}>Notes</h1>
+          <div className={"flex items-center w-full h-1 bg-yellow-200"}></div>
+          <Panel>
+            <IconButton className={"ml-2"}>
+              <FiFolderPlus size={24} />
+            </IconButton>
+            <IconButton className={"ml-2"}>
+              <FiFilePlus size={24} />
+            </IconButton>
+            <IconButton className={"ml-2"}>
+              <FiLock size={24} onClick={toggleDrag} />
+            </IconButton>
+          </Panel>
         </div>
-        <div className={"flex items-center w-full h-2 bg-yellow-200"}></div>
-        <a href="#" className={"flex flex-row items-center w-full h-16 border border-t-0 border-l-0 border-r-0 border-black bg-dark-2"}>
-          <FiFolder size="24" className="w-1/12 h-5 text-gray-100" />
-          <h1 className={"w-9/12 text-gray-100"}>Folder</h1>
-          <h1 className={"w-2/12 text-center text-gray-100"}>34</h1>
-        </a>
-        <a href="#" className={"flex flex-row items-center w-full h-16 border border-t-0 border-l-0 border-r-0 border-black bg-dark-2"}>
-          <FiFileText size="24" className="w-1/12 h-5 text-gray-100" />
-          <h1 className={"w-9/12 text-gray-100"}>Essay For Mechanical Engineering</h1>
-          <h1 className={"w-2/12 text-center text-gray-100"}>12</h1>
-        </a>
+        <ListView isDragable={isDragable} />
       </div>
       <div className={"w-2/12 min-h-screen overflow-y-scroll bg-dark-side"}>
-        <div className={"w-full h-64 bg-purple-700"}>test</div>
+        <div className={"w-full h-64 bg-red-700"}>test</div>
       </div>
     </div>
   )

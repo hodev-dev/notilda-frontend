@@ -1,5 +1,6 @@
 import React from 'react'
 import { FiFolder, FiSearch, FiBookmark, FiCodesandbox, FiTrash2, FiLink2 } from 'react-icons/fi';
+import Panel from './Panel';
 
 const Nav = () => {
   return (
@@ -19,10 +20,6 @@ const Nav = () => {
           <h1 className={"w-4/6 text-purple-200"}>Search</h1>
         </a>
         <a href="#" className={"flex flex-row items-center w-full h-16 border border-t-0 border-l-0 border-r-0 border-black bg-dark-2"}>
-          <FiFolder size="24" className="w-1/6 h-5 text-yellow-200" />
-          <h1 className={"w-4/6 text-yellow-200"}>Notes</h1>
-        </a>
-        <a href="#" className={"flex flex-row items-center w-full h-16 border border-t-0 border-l-0 border-r-0 border-black bg-dark-2"}>
           <FiBookmark size="24" className="w-1/6 h-5 text-green-200" />
           <h1 className={"w-4/6 text-green-200"}>Important</h1>
         </a>
@@ -38,7 +35,14 @@ const Nav = () => {
           <FiTrash2 size="24" className="w-1/6 h-5 text-red-200" />
           <h1 className={"w-4/6 text-red-200"}>Trash</h1>
         </a>
+        <Panel>
+          <h1 className={"ml-3 text-gray-100"}>Notebooks</h1>
+        </Panel>
       </div>
+      <a href="#" className={"flex flex-row items-center w-full h-16 border border-t-0 border-l-0 border-r-0 border-black bg-dark-2"}>
+        <FiFolder size="24" className="w-1/6 h-5 text-yellow-200" />
+        <h1 className={"w-4/6 text-yellow-200"}>Notes</h1>
+      </a>
     </>
   )
 }
